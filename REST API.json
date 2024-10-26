@@ -1,0 +1,1612 @@
+{
+	"info": {
+		"_postman_id": "b760f1d4-915c-46aa-a1fe-1cd747706100",
+		"name": "REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38870555"
+	},
+	"item": [
+		{
+			"name": "Get balance",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/users/{{user_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{user_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"user\": {\n            \"user_id\": \"0:d243c0bbe2ec8e18d2653b6f940db46a7e6c2f3b7b9567242e908e48e400\",\n            \"coin_balance\": \"7321\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Deposit memo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/deposit-memo",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"deposit-memo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/deposit-memo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deposit-memo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"wallet\": \"UQC7CECsMMrNJVcxJH8TlR-tK8yTS3gOC2JVvQeC1777\",\n        \"memo\": \"43822014600\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Withdraw",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"coin_amount\": \"COIN_AMOUNT\"\n}\n// \"coin_amount\" TYPE = STRING, amount of nanotons \"1000000000\""
+				},
+				"url": {
+					"raw": "{{base_url}}/withdraw",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"withdraw"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"coin_amount\": \"COIN_AMOUNT\" // TYPE = STRING, amount of nanotons \"1000000000\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/withdraw",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"withdraw"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"withdraw_id\": \"11\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Tokens Purchased",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/users/{{user_id}}/tokens?before=&after=",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}",
+						"tokens"
+					],
+					"query": [
+						{
+							"key": "before",
+							"value": "",
+							"description": "TYPE = STRING, cursor pagination"
+						},
+						{
+							"key": "after",
+							"value": "",
+							"description": "TYPE = STRING, cursor pagination"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{user_id}}/tokens?before=&after=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"tokens"
+							],
+							"query": [
+								{
+									"key": "before",
+									"value": "",
+									"description": "TYPE = STRING, cursor pagination"
+								},
+								{
+									"key": "after",
+									"value": "",
+									"description": "TYPE = STRING, cursor pagination"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"total\": \"1\",\n        \"tokens\": [\n            {\n                \"token\": {\n                    \"token_id\": \"47912201463\",\n                    \"name\": \"Test token\",\n                    \"telegram\": \"@test_channel_12345\",\n                    \"ticker\": \"ST\",\n                    \"description\": \"Strange token\",\n                    \"image_url\": \"https://coub-mini-app.coub.com/tokens/10000000\",\n                    \"channel_id\": \"1408\",\n                    \"token_minted\": \"1000000000000000\",\n                    \"token_locked\": \"200000000000000\",\n                    \"token_burned\": \"0\",\n                    \"created_by\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03\",\n                    \"is_suspicious\": false,\n                    \"is_nsfw\": false,\n                    \"is_scam\": false,\n                    \"created_at\": \"2024-10-16T20:32:36.161801Z\",\n                    \"version\": \"2\",\n                    \"is_bonding_curve_reached\": false,\n                    \"is_trading_disabled\": false,\n                    \"virtual_coin_balance\": \"800000000000\",\n                    \"virtual_token_balance\": \"266666666666667\",\n                    \"token_supply\": \"786961353253491\",\n                    \"coin_supply\": \"9900000000\",\n                    \"market_cap\": \"768677355468\",\n                    \"price\": \"768\",\n                    \"holders\": \"2\",\n                    \"buyout_coin_amount\": \"2390100000001\"\n                },\n                \"token_balance\": \"4891552475609\"\n            }\n        ],\n        \"page_info\": {\n            \"end_cursor\": \"eyJpZCI6Mzg5LCJ2YWx1ZSI6bnVsbH0=\",\n            \"has_next\": false\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Tokens Created",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tokens?user_id={{user_id}}&limit=&before=&after=",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tokens"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "{{user_id}}"
+						},
+						{
+							"key": "limit",
+							"value": "",
+							"description": "TYPE = INT"
+						},
+						{
+							"key": "before",
+							"value": "",
+							"description": "TYPE = STRING, cursor pagination"
+						},
+						{
+							"key": "after",
+							"value": "",
+							"description": "TYPE = STRING, cursor pagination"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tokens?user_id={{user_id}}&limit=&before=&after=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tokens"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "{{user_id}}"
+								},
+								{
+									"key": "limit",
+									"value": "",
+									"description": "TYPE = INT"
+								},
+								{
+									"key": "before",
+									"value": "",
+									"description": "TYPE = STRING, cursor pagination"
+								},
+								{
+									"key": "after",
+									"value": "",
+									"description": "TYPE = STRING, cursor pagination"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"total\": \"6\",\n        \"tokens\": [\n            {\n                \"token_id\": \"47912201463\",\n                \"name\": \"Strange token\",\n                \"telegram\": null,\n                \"ticker\": \"ST\",\n                \"description\": \"Strange token\",\n                \"image_url\": \"https://coub-mini-app.coub.com/tokens/10000000\",\n                \"channel_id\": \"1408\",\n                \"token_minted\": \"1000000000000000\",\n                \"token_locked\": \"200000000000000\",\n                \"token_burned\": \"0\",\n                \"created_by\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03e\",\n                \"is_suspicious\": false,\n                \"is_nsfw\": false,\n                \"is_scam\": false,\n                \"created_at\": \"2024-10-16T20:32:36.161801Z\",\n                \"version\": \"2\",\n                \"is_bonding_curve_reached\": false,\n                \"is_trading_disabled\": false,\n                \"virtual_coin_balance\": \"800000000000\",\n                \"virtual_token_balance\": \"266666666666667\",\n                \"token_supply\": \"786961353253491\",\n                \"coin_supply\": \"9900000000\",\n                \"market_cap\": \"768677355468\",\n                \"price\": \"768\",\n                \"holders\": \"2\",\n                \"buyout_coin_amount\": \"2390100000001\"\n            },\n            {\n                \"token_id\": \"54846798064\",\n                \"name\": \"Testest token\",\n                \"telegram\": null,\n                \"ticker\": \"TTT\",\n                \"description\": \"Token for test?\",\n                \"image_url\": \"https://coub-mini-app.coub.com/tokens/10000000\",\n                \"channel_id\": \"1407\",\n                \"token_minted\": \"1000000000000000\",\n                \"token_locked\": \"200000000000000\",\n                \"token_burned\": \"0\",\n                \"created_by\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03e\",\n                \"is_suspicious\": false,\n                \"is_nsfw\": false,\n                \"is_scam\": false,\n                \"created_at\": \"2024-10-16T20:03:52.1774Z\",\n                \"version\": \"2\",\n                \"is_bonding_curve_reached\": false,\n                \"is_trading_disabled\": false,\n                \"virtual_coin_balance\": \"800000000000\",\n                \"virtual_token_balance\": \"266666666666667\",\n                \"token_supply\": \"349632811306\",\n                \"coin_supply\": \"2395809900001\",\n                \"market_cap\": \"11968594824544\",\n                \"price\": \"11968\",\n                \"holders\": \"1\",\n                \"buyout_coin_amount\": \"4190100000\"\n            },\n            {\n                \"token_id\": \"10685624735\",\n                \"name\": \"What is token\",\n                \"telegram\": null,\n                \"ticker\": \"WIT\",\n                \"description\": \"TokensTokens!\",\n                \"image_url\": \"https://coub-mini-app.coub.com/tokens/10000000\",\n                \"channel_id\": \"1398\",\n                \"token_minted\": \"1000000000000000\",\n                \"token_locked\": \"0\",\n                \"token_burned\": \"8333349993141\",\n                \"created_by\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03e\",\n                \"is_suspicious\": false,\n                \"is_nsfw\": false,\n                \"is_scam\": false,\n                \"created_at\": \"2024-10-16T16:12:11.333812Z\",\n                \"version\": \"2\",\n                \"is_bonding_curve_reached\": true,\n                \"is_trading_disabled\": false,\n                \"virtual_coin_balance\": \"800000000000\",\n                \"virtual_token_balance\": \"266666666666667\",\n                \"token_supply\": \"191501991516298\",\n                \"coin_supply\": \"2301977600991\",\n                \"market_cap\": \"11919833133082\",\n                \"price\": \"12020\",\n                \"holders\": \"2\",\n                \"buyout_coin_amount\": null\n            }\n        ],\n        \"page_info\": {\n            \"end_cursor\": \"eyJpZCI6MzUsInZhbHVlIjpudWxsfQ==\",\n            \"has_next\": false\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Transaction History",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/users/{{user_id}}/history?kinds=deposit&kinds=withdraw&kinds=trade&from=&to=&sort=&limit=&before=&after=",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}",
+						"history"
+					],
+					"query": [
+						{
+							"key": "kinds",
+							"value": "deposit"
+						},
+						{
+							"key": "kinds",
+							"value": "withdraw"
+						},
+						{
+							"key": "kinds",
+							"value": "trade"
+						},
+						{
+							"key": "from",
+							"value": "",
+							"description": "TYPE = DATE RFC3339: 2024-09-03T09:40:26.054283Z\n"
+						},
+						{
+							"key": "to",
+							"value": "",
+							"description": "TYPE = DATE RFC3339: 2024-09-03T09:40:26.054283Z\n"
+						},
+						{
+							"key": "sort",
+							"value": "",
+							"description": "VALUE = asc/ desc"
+						},
+						{
+							"key": "limit",
+							"value": "",
+							"description": "TYPE = INT"
+						},
+						{
+							"key": "before",
+							"value": "",
+							"description": "TYPE = STRING, cursor pagination"
+						},
+						{
+							"key": "after",
+							"value": "",
+							"description": "TYPE = STRING, cursor pagination"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{user_id}}/history?kinds=deposit&kinds=withdraw&kinds=trade&from=&to=&sort=&limit=2&before=&after=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"history"
+							],
+							"query": [
+								{
+									"key": "kinds",
+									"value": "deposit"
+								},
+								{
+									"key": "kinds",
+									"value": "withdraw"
+								},
+								{
+									"key": "kinds",
+									"value": "trade"
+								},
+								{
+									"key": "from",
+									"value": "",
+									"description": "TYPE = DATE RFC3339: 2024-09-03T09:40:26.054283Z\n"
+								},
+								{
+									"key": "to",
+									"value": "",
+									"description": "TYPE = DATE RFC3339: 2024-09-03T09:40:26.054283Z\n"
+								},
+								{
+									"key": "sort",
+									"value": "",
+									"description": "VALUE = asc/ desc"
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"description": "TYPE = INT"
+								},
+								{
+									"key": "before",
+									"value": "",
+									"description": "TYPE = STRING, cursor pagination"
+								},
+								{
+									"key": "after",
+									"value": "",
+									"description": "TYPE = STRING, cursor pagination"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"total\": \"36\",\n        \"items\": [\n            {\n                \"kind\": \"trade\",\n                \"item\": {\n                    \"trade_id\": \"59988\",\n                    \"user_id\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03\",\n                    \"token_info\": {\n                        \"token_id\": \"91053264317\",\n                        \"name\": \"NewCurve\",\n                        \"telegram\": \"@some_test_1234\",\n                        \"ticker\": \"NC\",\n                        \"description\": \"Very new!\",\n                        \"image_url\": \"https://coub-mini-app.coub.com/tokens/10000000\",\n                        \"channel_id\": \"1249\",\n                        \"token_minted\": \"1000000000000000\",\n                        \"token_locked\": \"0\",\n                        \"token_burned\": \"8333350000016\",\n                        \"created_by\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03\",\n                        \"is_suspicious\": false,\n                        \"is_nsfw\": false,\n                        \"is_scam\": false,\n                        \"created_at\": \"2024-10-11T13:06:32.887311Z\",\n                        \"version\": \"2\",\n                        \"is_bonding_curve_reached\": true,\n                        \"is_trading_disabled\": false,\n                        \"virtual_coin_balance\": \"800000000000\",\n                        \"virtual_token_balance\": \"266666666666667\"\n                    },\n                    \"token_amount\": \"4151622052190\",\n                    \"coin_amount\": \"339295820302\",\n                    \"side\": \"buy\",\n                    \"created_at\": \"2024-10-21T08:13:13.995046Z\",\n                    \"fee_amount\": \"3392958203\"\n                }\n            },\n            {\n                \"kind\": \"withdraw\",\n                \"item\": {\n                    \"withdraw_id\": \"60261\",\n                    \"user_id\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03\",\n                    \"coin_amount\": \"300000001\",\n                    \"created_at\": \"2024-10-24T13:17:51.244821Z\",\n                    \"status\": \"completed\",\n                    \"hash\": \"f4cc4b153b154b769227a15e310eee52cfe2d80c3e15c5ce9352722e58107069\"\n                }\n            },\n            {\n                \"kind\": \"deposit\",\n                \"item\": {\n                    \"deposit_id\": \"1340170\",\n                    \"user_id\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03\",\n                    \"coin_amount\": \"1000000000\",\n                    \"created_at\": \"2024-10-23T20:25:45.464749Z\"\n                }\n            }\n        ],\n        \"page_info\": {\n            \"end_cursor\": \"eyJpZCI6NTQ3N30=\",\n            \"has_next\": true\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Explore Tokens",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tokens?sort_by=holders&sort=desc&limit=&before=&after=",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tokens"
+					],
+					"query": [
+						{
+							"key": "sort_by",
+							"value": "holders",
+							"description": "VALUE = created_time/ holders"
+						},
+						{
+							"key": "sort",
+							"value": "desc",
+							"description": "VALUE = asc/ desc"
+						},
+						{
+							"key": "limit",
+							"value": "",
+							"description": "TYPE = INT"
+						},
+						{
+							"key": "before",
+							"value": "",
+							"description": "TYPE = STRING, cursor pagination"
+						},
+						{
+							"key": "after",
+							"value": "",
+							"description": "TYPE = STRING, cursor pagination"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tokens?sort_by=&sort=&limit=2&before=&after=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tokens"
+							],
+							"query": [
+								{
+									"key": "sort_by",
+									"value": "",
+									"description": "VALUE = created_time/ holders"
+								},
+								{
+									"key": "sort",
+									"value": "",
+									"description": "VALUE = asc/ desc"
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"description": "TYPE = INT"
+								},
+								{
+									"key": "before",
+									"value": "",
+									"description": "TYPE = STRING, cursor pagination"
+								},
+								{
+									"key": "after",
+									"value": "",
+									"description": "TYPE = STRING, cursor pagination"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"total\": \"159\",\n        \"tokens\": [\n            {\n                \"token_id\": \"07345831624\",\n                \"name\": \"Q test\",\n                \"telegram\": null,\n                \"ticker\": \"QAT\",\n                \"description\": \"Space test!\",\n                \"image_url\": \"https://coub-mini-app.coub.com/tokens/10000000\",\n                \"channel_id\": \"1091\",\n                \"token_minted\": \"1000000000000000\",\n                \"token_locked\": \"200000000000000\",\n                \"token_burned\": \"0\",\n                \"created_by\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03e\",\n                \"is_suspicious\": false,\n                \"is_nsfw\": false,\n                \"is_scam\": false,\n                \"created_at\": \"2024-09-26T15:10:46.840877Z\",\n                \"version\": \"1\",\n                \"is_bonding_curve_reached\": false,\n                \"is_trading_disabled\": false,\n                \"virtual_coin_balance\": \"1260000000000000\",\n                \"virtual_token_balance\": \"279900000000000\",\n                \"token_supply\": \"787965632547479\",\n                \"coin_supply\": \"14199635738539\",\n                \"market_cap\": \"1193220941757282\",\n                \"price\": \"1193220\",\n                \"holders\": \"105\",\n                \"buyout_coin_amount\": \"3587086537929565\"\n            }\n        ],\n        \"page_info\": {\n            \"end_cursor\": \"eyJpZCI6MjcsInZhbHVlIjpudWxsfQ==\",\n            \"has_next\": true\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-COUB-AUTHORIZATION",
+						"value": "{{TOKEN_COUB}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"token_name\",\n  \"ticker\": \"ticker\",\n  \"description\": \"description\",\n  \"image\": \"image\",\n  \"channel_id\": \"{{channel_id}}\",\n  \"buyout\": \"COIN_AMOUNT\"\n}\n// \"name\" TYPE = STRING \n// \"ticker\" TYPE = STRING\n// \"description\" TYPE = STRING\n// \"image\" TYPE = STRING, image in BASE64\n// \"channel_id\" TYPE = STRING\n// \"buyout\" TYPE = STRING, amount of nanotons \"1000000000\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/tokens/create",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tokens",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-COUB-AUTHORIZATION",
+								"value": "{{TOKEN_COUB}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"token_name\",  // TYPE = STRING \n  \"ticker\": \"ticker\",  // TYPE = STRING\n  \"description\": \"description\", // TYPE = STRING\n  \"image\": \"image\", // TYPE = STRING, image in BASE64\n  \"channel_id\": {{channel_id}}, // TYPE = STRING\n  \"buyout\": \"COIN_AMOUNT\"  // TYPE = STRING, amount of nanotons \"1000000000\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/tokens/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tokens",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"id\": \"78951961435\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tokens/{{token_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tokens",
+						"{{token_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tokens/{{token_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tokens",
+								"{{token_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"token\": {\n            \"token_id\": \"78951961435\",\n            \"name\": \"Test token\",\n            \"telegram\": null,\n            \"ticker\": \"SDFS\",\n            \"description\": \"test token\",\n            \"image_url\": \"https://coub-mini-app.coub.com/tokens/10000000\",\n            \"channel_id\": null,\n            \"token_minted\": \"1000000000000000\",\n            \"token_locked\": \"200000000000000\",\n            \"token_burned\": \"0\",\n            \"created_by\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03e\",\n            \"is_suspicious\": false,\n            \"is_nsfw\": false,\n            \"is_scam\": false,\n            \"created_at\": \"2024-10-25T09:53:11.22038Z\",\n            \"version\": \"2\",\n            \"is_bonding_curve_reached\": false,\n            \"is_trading_disabled\": false,\n            \"virtual_coin_balance\": \"800000000000\",\n            \"virtual_token_balance\": \"266666666666667\",\n            \"token_supply\": \"798681631481043\",\n            \"coin_supply\": \"990000000\",\n            \"market_cap\": \"751857398554\",\n            \"price\": \"751\",\n            \"holders\": \"1\",\n            \"buyout_coin_amount\": \"2399010000000\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Make a Trade Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"token_id\": \"{{token_id}}\",\n  \"token_amount\": \"TOKEN_AMOUNT\",\n  \"side\": \"side\",\n  \"slippage\": \"PERCENT\",\n  \"expected_price\": \"COIN_AMOUNT\"\n}\n// \"token_id\" TYPE = STRING \n// \"token_amount\" TYPE = STRING, amount of microtokens \"1000000\"\n// \"side\" VALUE = buy/sell\n// \"slippage\" TYPE = STRING, 4 decimals (100 == 1%)\n// \"expected_price\" TYPE = STRING, amount of nanotons \"1000000000\""
+				},
+				"url": {
+					"raw": "{{base_url}}/trades",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"trades"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token_id\": {{token_id}},  // TYPE = STRING \n  \"token_amount\": \"token_amount or coin_amount\", // TYPE = STRING, amount of microtokens/nanotokens \"1000000\"\n  \"side\": \"side\", // VALUE = buy/sell\n  \"slippage\": \"PERCENT\", // TYPE = STRING, 4 decimals (100 == 1%)\n  \"expected_price\": \"COIN_AMOUNT\" // TYPE = STRING, amount of nanotons \"1000000000\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/trades",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trades"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Make a Trade Coin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"token_id\": \"{{token_id}}\",\n  \"coin_amount\": \"COIN_AMOUNT\",\n  \"side\": \"side\",\n  \"slippage\": \"PERCENT\",\n  \"expected_price\": \"COIN_AMOUNT\"\n}\n// \"token_id\" TYPE = STRING \n// \"coin_amount\" TYPE = STRING, amount of nanotons \"1000000000\"\n// \"side\" VALUE = buy/sell\n// \"slippage\" TYPE = STRING, 4 decimals (100 == 1%)\n// \"expected_price\" TYPE = STRING, amount of nanotons \"1000000000\""
+				},
+				"url": {
+					"raw": "{{base_url}}/trades",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"trades"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token_id\": {{token_id}},  // TYPE = STRING \n  \"token_amount\": \"token_amount or coin_amount\", // TYPE = STRING, amount of microtokens/nanotokens \"1000000\"\n  \"side\": \"side\", // VALUE = buy/sell\n  \"slippage\": \"PERCENT\", // TYPE = STRING, 4 decimals (100 == 1%)\n  \"expected_price\": \"COIN_AMOUNT\" // TYPE = STRING, amount of nanotons \"1000000000\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/trades",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trades"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Token Recent Trades",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tokens/{{token_id}}/recent-trades",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tokens",
+						"{{token_id}}",
+						"recent-trades"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tokens/{{token_id}}/recent-trades",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tokens",
+								"{{token_id}}",
+								"recent-trades"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"trades\": [\n            {\n                \"trade_id\": \"60018\",\n                \"user_id\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03e\",\n                \"token_info\": {\n                    \"token_id\": \"47912201463\",\n                    \"name\": \"Strange token\",\n                    \"telegram\": null,\n                    \"ticker\": \"ST\",\n                    \"description\": \"Strange token\",\n                    \"image_url\": \"https://coub-mini-app.coub.com/tokens/10000000\",\n                    \"channel_id\": \"1408\",\n                    \"token_minted\": \"1000000000000000\",\n                    \"token_locked\": \"200000000000000\",\n                    \"token_burned\": \"0\",\n                    \"created_by\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03e\",\n                    \"is_suspicious\": false,\n                    \"is_nsfw\": false,\n                    \"is_scam\": false,\n                    \"created_at\": \"2024-10-16T20:32:36.161801Z\",\n                    \"version\": \"2\",\n                    \"is_bonding_curve_reached\": false,\n                    \"is_trading_disabled\": false,\n                    \"virtual_coin_balance\": \"800000000000\",\n                    \"virtual_token_balance\": \"266666666666667\"\n                },\n                \"token_amount\": \"1289502836806\",\n                \"coin_amount\": \"990000000\",\n                \"side\": \"buy\",\n                \"created_at\": \"2024-10-22T09:46:04.047042Z\",\n                \"fee_amount\": \"10000000\"\n            },\n            {\n                \"trade_id\": \"58740\",\n                \"user_id\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03e\",\n                \"token_info\": {\n                    \"token_id\": \"47912201463\",\n                    \"name\": \"Strange token\",\n                    \"telegram\": null,\n                    \"ticker\": \"ST\",\n                    \"description\": \"Strange token\",\n                    \"image_url\": \"https://coub-mini-app.coub.com/tokens/10000000\",\n                    \"channel_id\": \"1408\",\n                    \"token_minted\": \"1000000000000000\",\n                    \"token_locked\": \"200000000000000\",\n                    \"token_burned\": \"0\",\n                    \"created_by\": \"0:8d27af3b50473a566b582199ceb9a7d660fcd9160c0602a63f74f4f03e\",\n                    \"is_suspicious\": false,\n                    \"is_nsfw\": false,\n                    \"is_scam\": false,\n                    \"created_at\": \"2024-10-16T20:32:36.161801Z\",\n                    \"version\": \"2\",\n                    \"is_bonding_curve_reached\": false,\n                    \"is_trading_disabled\": false,\n                    \"virtual_coin_balance\": \"800000000000\",\n                    \"virtual_token_balance\": \"266666666666667\"\n                },\n                \"token_amount\": \"6495151173748\",\n                \"coin_amount\": \"4950000000\",\n                \"side\": \"buy\",\n                \"created_at\": \"2024-10-18T08:55:01.19809Z\",\n                \"fee_amount\": \"50000000\"\n            }\n        ],\n        \"page_info\": {\n            \"end_cursor\": \"eyJpZCI6NTYwNX0=\",\n            \"has_next\": true\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Token TOP Holders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tokens/{{token_id}}/top-holders",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tokens",
+						"{{token_id}}",
+						"top-holders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tokens/{{token_id}}/top-holders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tokens",
+								"{{token_id}}",
+								"top-holders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"holders\": [\n            {\n                \"user_id\": null,\n                \"token_balance\": \"689851129113510\"\n            },\n            {\n                \"user_id\": \"0:bc54f0e9a4599168e6a7161d0336495a081bf7497d50ec77b6050f1\",\n                \"token_balance\": \"30260656696129\"\n            },\n            {\n                \"user_id\": \"0:5a2fc8650974e1d63f80b7a7dfc203d57c8594c31be8d78a3a38b4b\",\n                \"token_balance\": \"29733354135457\"\n            },\n            {\n                \"user_id\": \"0:08da19e775fb9287ae816c6faf506052c3dc1b48440580692d5f000\",\n                \"token_balance\": \"12274330814744\"\n            },\n            {\n                \"user_id\": \"0:23d0d98d2fcb8c2b5376399cea2cd15948835e281dec303263fc0cb\",\n                \"token_balance\": \"9702589956582\"\n            },\n            {\n                \"user_id\": \"0:b1aafd30ba7168830330910f678f43066155736426991215e329d9c\",\n                \"token_balance\": \"7426919150157\"\n            },\n            {\n                \"user_id\": \"0:af4f337980b9cdaf9f1d650ecd4e632633757595a7206fd8652b80d\",\n                \"token_balance\": \"3237308108497\"\n            },\n            {\n                \"user_id\": \"0:24c28a33b11d3cbf4b0e0957f398fd869698ed1b4c98e68d2340ada\",\n                \"token_balance\": \"2660016625103\"\n            },\n            {\n                \"user_id\": \"0:d80ebf61abdccc747f51d01b91efbcae4672ee194d802e18c99a0f1\",\n                \"token_balance\": \"2471424158171\"\n            },\n            {\n                \"user_id\": \"0:aa196491bd1f3456f7498bb5b23f014ebaf763433878c73471aacd0\",\n                \"token_balance\": \"2424517937644\"\n            }\n        ],\n        \"curve\": {\n            \"token_balance\": 689851129113510\n        },\n        \"created_by\": {\n            \"user_id\": \"0:24c28a33b11d3cbf4b0e0957f398fd869698ed1b4c98e68d2340ada\",\n            \"token_balance\": \"2660016625103\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Dry-run",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"token_id\": \"{{token_id}}\",\n  \"token_amount\": \"TOKEN_AMOUNT\",\n  \"side\": \"side\",\n  \"fee_amount\": \"COIN_AMOUNT\"\n}\n// \"token_id\" TYPE = STRING \n// \"token_amount\" TYPE = STRING, amount of microtokens \"1000000\"\n// \"side\" VALUE = buy/sell\n// \"fee_amount\" TYPE = STRING, amount of nanotons \"1000000000\""
+				},
+				"url": {
+					"raw": "{{base_url}}/trades/dry-run",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"trades",
+						"dry-run"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token_id\": {{token_id}},  // TYPE = STRING \n  \"token_amount\": \"token_amount\", // TYPE = STRING, amount of microtokens \"1000000\"\n  \"side\": \"side\", // VALUE = buy/sell\n  \"fee_amount\": \"COIN_AMOUNT\" // TYPE = STRING, amount of nanotons \"1000000000\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/trades/dry-run",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"trades",
+								"dry-run"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"token_amount\": \"144417370225\",\n        \"start_price\": \"754\",\n        \"fee_amount\": \"1100000\",\n        \"max_buy\": {\n            \"token_amount\": \"797049236475150\",\n            \"coin_amount\": \"2397780788268\",\n            \"fee_amount\": \"23977807882\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Token Balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/users/{{user_id}}/token-balance/{{token_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"{{user_id}}",
+						"token-balance",
+						"{{token_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{user_id}}/token-balance/{{token_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"token-balance",
+								"{{token_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"amount\": \"5\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Favorites Get list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/metadata/users/favorites",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"metadata",
+						"users",
+						"favorites"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": []
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"tokens\": [\n            {\n                \"token_id\": \"50752967980\",\n                \"name\": \"KIT\",\n                \"telegram\": \"@kit\",\n                \"ticker\": \"SKIT\",\n                \"description\": \"test\",\n                \"image_url\": \"https://coub-mini-app.coub.com/tokens/10000000\",\n                \"channel_id\": null,\n                \"token_minted\": \"1000000000000000\",\n                \"token_locked\": \"0\",\n                \"token_burned\": \"8333860738583\",\n                \"created_by\": \"0:660ea106b1b987f32147178540591ded34097c4dfefc8aee6ca68882892a\",\n                \"is_suspicious\": false,\n                \"is_nsfw\": false,\n                \"is_scam\": false,\n                \"created_at\": \"2024-10-23T21:14:35.385689Z\",\n                \"version\": \"2\",\n                \"is_bonding_curve_reached\": true,\n                \"is_trading_disabled\": false,\n                \"virtual_coin_balance\": \"800000000000\",\n                \"virtual_token_balance\": \"266666666666667\",\n                \"token_supply\": \"942919718493113\",\n                \"coin_supply\": \"467518190611\",\n                \"market_cap\": \"490874738934\",\n                \"price\": \"495\",\n                \"holders\": \"155\",\n                \"buyout_coin_amount\": null\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Favorites Add new",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/metadata/users/favorites/:token_id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"metadata",
+						"users",
+						"favorites",
+						":token_id"
+					],
+					"variable": [
+						{
+							"key": "token_id",
+							"value": "",
+							"description": "token id"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/metadata/users/favorites/50752967980",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"metadata",
+								"users",
+								"favorites",
+								"50752967980"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Favorites Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/metadata/users/favorites/:token_id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"metadata",
+						"users",
+						"favorites",
+						":token_id"
+					],
+					"variable": [
+						{
+							"key": "token_id",
+							"value": "",
+							"description": "token id"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/metadata/users/favorites/50752967980",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"metadata",
+								"users",
+								"favorites",
+								"50752967980"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Token ids",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/token_ids?id=&id=",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"token_ids"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "",
+							"description": "token id"
+						},
+						{
+							"key": "id",
+							"value": "",
+							"description": "token id"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/token_ids?id=35935574105&id=64553984637",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"token_ids"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "35935574105"
+								},
+								{
+									"key": "id",
+									"value": "64553984637"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"details\": {\n        \"tokens\": [\n            {\n                \"token_id\": \"64553984637\",\n                \"name\": \"Leopold \",\n                \"telegram\": \"@leopoId_test\",\n                \"ticker\": \"LEO\",\n                \"description\": \"TEST\",\n                \"image_url\": \"https://coub-mini-app.coub.com/tokens/10000000\",\n                \"channel_id\": null,\n                \"token_minted\": \"1000000000000000\",\n                \"token_locked\": \"200000000000000\",\n                \"token_burned\": \"0\",\n                \"created_by\": \"0:a38eb503913f34b06a87e2597df0c4759ff0c907888b8273281ca093069e91\",\n                \"is_suspicious\": false,\n                \"is_nsfw\": false,\n                \"is_scam\": false,\n                \"created_at\": \"2024-10-24T15:47:14.538623Z\",\n                \"version\": \"2\",\n                \"is_bonding_curve_reached\": false,\n                \"is_trading_disabled\": false,\n                \"virtual_coin_balance\": \"800000000000\",\n                \"virtual_token_balance\": \"266666666666667\",\n                \"token_supply\": \"799107864685595\",\n                \"coin_supply\": \"669661750\",\n                \"market_cap\": \"751256141140\",\n                \"price\": \"751\",\n                \"holders\": \"9\",\n                \"buyout_coin_amount\": \"2399330338949\"\n            },\n            {\n                \"token_id\": \"35935574105\",\n                \"name\": \"IMMORTAL PANDA\",\n                \"telegram\": \"@testv\",\n                \"ticker\": \"PANDA\",\n                \"description\": \"We don't give up!\\n\\nWE LOVE PANDA\\nWE HOLD PANDA\\nWE TRUST PANDA\\nby @bambo\\n\",\n                \"image_url\": \"https://coub-mini-app.coub.com/tokens/10000000\",\n                \"channel_id\": null,\n                \"token_minted\": \"1000000000000000\",\n                \"token_locked\": \"200000000000000\",\n                \"token_burned\": \"0\",\n                \"created_by\": \"0:f1c4bc1c97d4cb9c13c766cc84077386f6b4ce7794466714470b852ed7e0\",\n                \"is_suspicious\": false,\n                \"is_nsfw\": false,\n                \"is_scam\": false,\n                \"created_at\": \"2024-10-24T16:44:13.055438Z\",\n                \"version\": \"2\",\n                \"is_bonding_curve_reached\": false,\n                \"is_trading_disabled\": false,\n                \"virtual_coin_balance\": \"800000000000\",\n                \"virtual_token_balance\": \"266666666666667\",\n                \"token_supply\": \"737769930506063\",\n                \"coin_supply\": \"49564159654\",\n                \"market_cap\": \"845811634149\",\n                \"price\": \"845\",\n                \"holders\": \"33\",\n                \"buyout_coin_amount\": \"2350435841357\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Marketdata TOP",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{md_base_url}}/public/api/v1/stats/tokens/top?page=0&size=10&sort=volume,desc",
+					"host": [
+						"{{md_base_url}}"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"stats",
+						"tokens",
+						"top"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"description": "TYPE = INT"
+						},
+						{
+							"key": "size",
+							"value": "10",
+							"description": "TYPE = INT"
+						},
+						{
+							"key": "sort",
+							"value": "volume,desc",
+							"description": "VALUE = volume,asc / volume,desc / marketcap,asc / marketcap,desc / change,asc / change,desc"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{md_base_url}}/public/api/v1/stats/tokens/top?page=0&size=10&sort=volume,desc",
+							"host": [
+								"{{md_base_url}}"
+							],
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"stats",
+								"tokens",
+								"top"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "volume,desc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        \"57946798064\",\n        \"50752967980\",\n        \"30621741059\",\n        \"18037956247\",\n        \"64547084637\",\n        \"82628403297\",\n        \"09038945831\",\n        \"35935574105\",\n        \"64553984637\",\n        \"18798956247\"\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"offset\": 0,\n        \"pageNumber\": 0,\n        \"pageSize\": 10,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"totalPages\": 1257,\n    \"totalElements\": 12565,\n    \"last\": false,\n    \"size\": 10,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": false,\n        \"sorted\": true,\n        \"unsorted\": false\n    },\n    \"numberOfElements\": 10,\n    \"first\": true,\n    \"empty\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "Marketdata Stats",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{md_base_url}}/public/api/v1/stats?tokens=",
+					"host": [
+						"{{md_base_url}}"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"stats"
+					],
+					"query": [
+						{
+							"key": "tokens",
+							"value": "",
+							"description": "token id"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{md_base_url}}/public/api/v1/stats?tokens=18170956247",
+							"host": [
+								"{{md_base_url}}"
+							],
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"stats"
+							],
+							"query": [
+								{
+									"key": "tokens",
+									"value": "18170956247"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"token\": \"57946798064\",\n        \"volume\": 47146231545862,\n        \"change\": -0.0283\n    },\n    {\n        \"token\": \"30621741059\",\n        \"volume\": 14210185515452,\n        \"change\": 0.2423\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Marketdata candlesticks",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{md_base_url}}/public/api/v1/candlesticks?token=&interval=&startTime=&endTime=",
+					"host": [
+						"{{md_base_url}}"
+					],
+					"path": [
+						"public",
+						"api",
+						"v1",
+						"candlesticks"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "",
+							"description": "token id"
+						},
+						{
+							"key": "interval",
+							"value": "",
+							"description": "VALUE = 1s / 30s / 1m / 5m / 15m / 1h / 4h / 1d"
+						},
+						{
+							"key": "startTime",
+							"value": "",
+							"description": "timestamp"
+						},
+						{
+							"key": "endTime",
+							"value": "",
+							"description": "timestamp"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{md_base_url}}/public/api/v1/candlesticks?token=18170956247&interval=5m&startTime=1729678239975&endTime=1729851039974",
+							"host": [
+								"{{md_base_url}}"
+							],
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"candlesticks"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "18170956247"
+								},
+								{
+									"key": "interval",
+									"value": "5m"
+								},
+								{
+									"key": "startTime",
+									"value": "1729678239975"
+								},
+								{
+									"key": "endTime",
+									"value": "1729851039974"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"t\": 1729849800000,\n        \"o\": \"7.489999999999999E-7\",\n        \"h\": \"0.00000368\",\n        \"l\": \"7.489999999999999E-7\",\n        \"c\": \"0.00000368\",\n        \"v\": \"592107693788194\"\n    },\n    {\n        \"t\": 1729850100000,\n        \"o\": \"0.00000368\",\n        \"h\": \"0.0000051\",\n        \"l\": \"0.0000036939999999999997\",\n        \"c\": \"0.0000051\",\n        \"v\": \"99671843965310\"\n    },\n    {\n        \"t\": 1729850400000,\n        \"o\": \"0.0000051\",\n        \"h\": \"0.000006519999999999999\",\n        \"l\": \"0.000005104\",\n        \"c\": \"0.000006519999999999999\",\n        \"v\": \"57139781844754\"\n    },\n    {\n        \"t\": 1729850700000,\n        \"o\": \"0.000006519999999999999\",\n        \"h\": \"0.000008582\",\n        \"l\": \"0.000006523\",\n        \"c\": \"0.000008407\",\n        \"v\": \"58450825596647\"\n    },\n    {\n        \"t\": 1729851000000,\n        \"o\": \"0.000008407\",\n        \"h\": \"0.000005869\",\n        \"l\": \"7.58E-7\",\n        \"c\": \"7.58E-7\",\n        \"v\": \"752784450300066\"\n    }\n]"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
